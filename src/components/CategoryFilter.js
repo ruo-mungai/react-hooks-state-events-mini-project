@@ -1,12 +1,18 @@
 import React from "react";
+import Button from "./Button";
 
-function CategoryFilter() {
+function CategoryFilter({categories, updateFilterBy}) {
+  
+  const categoryBtns = categories.map((category) => {
+    return <Button key={category} category={category} updateFilterBy={updateFilterBy}/>
+  })
+
   return (
     <div className="categories">
       <h5>Category filters</h5>
-      {/* render <button> elements for each category here */}
+      {categoryBtns}
     </div>
   );
 }
 
-export default CategoryFilter;
+export default CategoryFilter
